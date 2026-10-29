@@ -1,0 +1,92 @@
+<!DOCTYPE html>
+<html lang="es">
+
+<head>
+    <meta charset="utf-8">
+    <title>Ajedrez</title>
+    <meta name="viewport" content="width=device-width, initial-scale=1, viewport-fit=cover">
+    <link href="https://fonts.googleapis.com/css2?family=Roboto:wght@500;700;900&display=swap" rel="stylesheet">
+    <link rel="stylesheet" href="css/styles.css">
+</head>
+
+<body>
+    <div id="ld">
+        <div class="lg"><span class="k">♚&#xFE0E;</span><span class="q">♛&#xFE0E;</span></div>
+        <h2>CARGANDO...</h2>
+        <div class="bar"><i id="pb"></i></div>
+    </div>
+    <div id="app" hidden>
+        <header><button id="av"></button>
+            <div id="ht"></div><button id="gear">⚙</button>
+        </header>
+        <main>
+            <section id="menu" class="on">
+                <div class="lg"><span class="k">♚&#xFE0E;</span><span class="q">♛&#xFE0E;</span></div>
+                <h3>ELIGE TU MODO</h3>
+                <button class="bt" id="b1">🤖 Jugar contra la CPU</button><button class="bt cy" id="b2">👥 2
+                    Jugadores</button><button class="bt cy" id="b3">🧩 Puzles</button><button class="bt cy" id="b4">🎓
+                    Aprende a jugar al ajedrez</button>
+            </section>
+            <section id="set"><button class="bk" onclick="go(prev)">‹</button>
+                <div class="t">Configuración</div>
+                <div class="pn">
+                    <div class="row"><span>Jugar con</span><span class="sd" style="flex:none;width:200px"><button
+                                id="s3">3D</button><button id="s2">2D</button></span></div>
+                    <div class="row"><span>Indicar los movimientos disponibles para la pieza seleccionada</span>
+                        <div class="tg" data-k="mv"></div>
+                    </div>
+                    <div class="row"><span>Indicar las piezas con movimientos disponibles</span>
+                        <div class="tg" data-k="pc"></div>
+                    </div>
+                    <div class="row"><span>Resaltar el último movimiento</span>
+                        <div class="tg" data-k="last"></div>
+                    </div>
+                    <div class="row"><span>Girar el tablero en 2 jugadores</span>
+                        <div class="tg" data-k="flip"></div>
+                    </div>
+                    <div class="row"><span>Sonidos</span>
+                        <div class="tg" data-k="snd"></div>
+                    </div>
+                    <div class="row"><span>Idioma</span><button class="bt"
+                            style="width:200px;min-height:50px">Español</button></div>
+                    <div class="row"><span>Reiniciar estadísticas</span><button class="bt" id="rs"
+                            style="width:200px;min-height:50px">Reiniciar</button></div>
+                </div>
+            </section>
+            <section id="cpu"><button class="bk" onclick="go('menu')">‹</button>
+                <div class="t">Jugar contra la CPU</div>
+                <div class="pn">
+                    <h4>Jugar como</h4>
+                    <div class="sd" id="sides"><button data-s="w"><span
+                                class="pw w">♟&#xFE0E;</span>Blancas</button><button data-s="r"><span
+                                class="pw r">♟&#xFE0E;</span>Aleatorio</button><button data-s="b"><span
+                                class="pw b">♟&#xFE0E;</span>Negras</button></div>
+                </div>
+                <div class="pn">
+                    <h4>Nivel de dificultad</h4>
+                    <div id="ln"></div>
+                    <div class="tk" id="tk"></div><input type="range" id="rg" min="1" max="8" step="1">
+                    <div class="st" id="st"></div>
+                </div>
+                <button class="bt" id="pl">Jugar ahora</button>
+            </section>
+            <section id="game"><button class="bk" onclick="go('menu')">‹</button>
+                <div id="bdw">
+                    <div id="bd"></div>
+                </div>
+                <div id="ctl"><button class="cb" id="c1"><b>↻</b>REINICIAR</button><button class="cb"
+                        id="c2"><b>♜&#xFE0E;</b>PIEZAS</button><button class="cb"
+                        id="c3"><b>↶</b>DESHACER</button><button class="cb" id="c4"><b>💡<u
+                                id="hn">9</u></b>PISTA</button></div>
+            </section>
+        </main>
+    </div>
+    <div id="md"></div>
+    <script src="js/config.js"></script>
+    <script src="js/engine.js"></script>
+    <script src="js/ui.js"></script>
+    <script src="js/menus.js"></script>
+    <script src="js/index.js"></script>
+</body>
+
+</html>
